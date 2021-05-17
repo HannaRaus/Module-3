@@ -1,6 +1,7 @@
 --1. Добавить разработчикам поле (salary - зарплата). 
 
-ADD COLUMN salary int
+ALTER TABLE developers
+ADD COLUMN salary int;
 
 UPDATE developers
 SET salary = 1000
