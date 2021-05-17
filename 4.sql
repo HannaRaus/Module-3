@@ -1,7 +1,7 @@
 --4. Добавить поле (cost - стоимость) в таблицу Projects .
 
 ALTER TABLE projects
-ADD COLUMN cost int
+ADD COLUMN cost int;
 
 UPDATE projects proj SET cost = 
 (	SELECT SUM (d.salary)  AS total_cost
