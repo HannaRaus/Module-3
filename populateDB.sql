@@ -1,48 +1,56 @@
-
-INSERT INTO custumers (first_name, last_name)
+INSERT INTO customers (customer_name, industry)
 VALUES
-('Patsy', 'Russell'),
-('Velma', 'Manning'),
-('Marty', 'Jackson'),
-('Alton', 'Alvarado'),
-('Andre', 'Alexander'),
-('Audrey', 'Blair'),
-('Cathy', 'Luna'),
-('Fannie', 'Stone'),
-('Christine', 'Barber'),
-('Lori', 'Copeland');
+('Amazon', 'Cloud computing'),
+('Google', 'Internet'),
+('Apple', 'Consumer electronics'),
+('Microsoft', 'Software development'),
+('Samsung', 'Conglomerate'),
+('ICBC', 'Financial services'),
+('Facebook', 'Social networking service'),
+('Walmart', 'Retail'),
+('Ping An', 'Financial services'),
+('Huawei', 'Consumer electronics');
 
-INSERT INTO companies (company_name)
+INSERT INTO companies (company_name, headquarters)
 VALUES
-('EPAM'),
-('SoftServe'),
-('Luxoft'),
-('Ciklum'),
-('NIX');
+('EPAM', 'Newtown'),
+('SoftServe', 'Lviv'),
+('Luxoft', 'Zug'),
+('Ciklum', 'London'),
+('NIX', 'Kharkiv');
 
-INSERT INTO custumer_companies (company_id, custumer_id)
-SELECT company_id, custumer_id
-FROM companies, custumers;
-
-INSERT INTO projects (project_name, company_id)
+INSERT INTO projects (project_name, project_description)
 VALUES
-('Titan', 1),
-('Project Hanks', 1),
-('Kodiak', 1),
-('Code Talkers', 2),
-('Project Blue Book', 2),
-('X Lab', 2),
-('Project 404', 2),
-('Manhattan Project', 2),
-('Durango', 3),
-('Apollo', 3),
-('ProjectManager.com', 4),
-('Bikers Portal',5),
-('College Enquiry Chat Bot', 5),
-('Improved Data Leakage Detection', 5),
-('Matrimonial Portal Project', 5),
-(' Image Mining Project', 5),
-('MLM Project', 5);
+('Titan', 'electric car project'),
+('Project Hanks', 'business keys'),
+('Kodiak', 'operating system'),
+('Code Talkers', NULL),
+('Project Blue Book', 'systematic study of unidentified flying objects'),
+('X Lab', 'Software and consulting'),
+('Project 404', NULL),
+('Manhattan Project', NULL),
+('Durango', 'gaming console'),
+('Apollo', NULL),
+('ProjectManager.com', 'management software'),
+('Bikers Portal', NULL),
+('College Enquiry Chat Bot', NULL),
+('Improved Data Leakage Detection', NULL),
+('Matrimonial Portal Project', NULL),
+('Image Mining Project', NULL),
+('MLM Project', NULL);
+
+INSERT INTO customers_companies (customer_id, company_id, project_id)
+VALUES
+(1, 1, 1), (1, 2, 1), (1, 2, 5),
+(2, 2, 2), (2, 2, 8), (2, 4, 12),
+(3, 1, 3), (3, 3, 3), (3, 5, 7),
+(4, 3, 10), (4, 4, 10),
+(5, 1, 11), (5, 4, 11), (5, 4, 13),
+(6, 2, 14), (6, 5, 14),
+(7, 1, 4), (7, 2, 4), (7, 5, 15),
+(8, 3, 9), (8, 4, 16),
+(9, 1, 6), (9, 5, 17),
+(10, 1, 12);
 
 INSERT INTO developers (first_name, last_name, sex)
 VALUES
