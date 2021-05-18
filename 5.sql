@@ -2,5 +2,6 @@
 
 SELECT *
 FROM projects p
-WHERE cost = (SELECT MIN(cost)	FROM projects)
+GROUP BY p.project_id
+HAVING cost = (SELECT MIN(cost)	FROM projects)
 LIMIT 1;
