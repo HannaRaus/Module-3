@@ -20,7 +20,8 @@ JOIN
 	GROUP BY p.project_id
 )	AS calculated_cost
 ON calculated_cost.project_id=p.project_id
-WHERE total_cost =
+GROUP BY p.project_name, total_cost
+HAVING total_cost =
 	(SELECT MAX(calculated_cost.total_cost) AS max_cost
 	FROM 
 	(	SELECT p.project_id, SUM (d.salary)  AS total_cost
